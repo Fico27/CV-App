@@ -1,14 +1,17 @@
 function Cv({ generalInfo, educationInfo, experienceInfo }) {
   return (
     <div className="documentHolder">
-      <h1>TESTTESTTESTTEST</h1>
-      <h1>TESTTESTTESTTEST</h1>
-      <h1>TESTTESTTESTTEST</h1>
-      <h1>{generalInfo.name}</h1>
-      <h1>{experienceInfo.company}</h1>
-      <h1>{educationInfo.degree}</h1>
-      <h1>{educationInfo.start}</h1>
-      <h1>{educationInfo.end}</h1>
+      <header>
+        <h1 className="nameHolder">{generalInfo.name}</h1>
+        <div className="genInfoHolder">
+          <h2>{generalInfo.email}</h2>
+          <h2>{generalInfo.phone}</h2>
+          <h2>{generalInfo.location}</h2>
+        </div>
+      </header>
+
+      <section className="educationHolder"></section>
+      <section className="experienceHolder"></section>
     </div>
   );
 }

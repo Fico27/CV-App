@@ -35,6 +35,16 @@ function GeneralInfo({ generalInfo, setGeneralInfo }) {
             setGeneralInfo({ ...generalInfo, phone: e.target.value });
           }}
         />
+
+        <label htmlFor="phone">Location: </label>
+        <input
+          type="text"
+          id="location"
+          name="location"
+          onChange={(e) => {
+            setGeneralInfo({ ...generalInfo, location: e.target.value });
+          }}
+        />
       </form>
     </div>
   );

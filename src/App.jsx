@@ -9,6 +9,7 @@ function App() {
   const [generalInfo, setGeneralInfo] = useState({
     name: "",
     email: "",
+    location: "",
     phone: "",
   });
 
