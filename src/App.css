@@ -55,6 +55,78 @@ header {
   margin: 1rem 1rem;
 }
 
+section {
+  margin-top: 2rem;
+}
+.sectionHolder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  background-color: lightgray;
+}
+
+.titleHolder h3 {
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.educationInfoHolder {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 80%;
+  margin-top: 1rem;
+}
+
+.schoolHolder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+
+  margin-left: 2rem;
+}
+
+.schoolHolder p {
+  margin: 0;
+}
+
+.experienceInfoHolder {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-top: 0.5rem;
+}
+
+.experienceInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.company {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.company p {
+  margin-left: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.experienceInfoDes {
+  display: flex;
+}
 /* .logo {
   height: 6em;
   padding: 1.5em;
