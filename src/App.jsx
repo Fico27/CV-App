@@ -13,12 +13,14 @@ function App() {
     phone: "",
   });
 
-  const [educationInfo, setEducationInfo] = useState({
-    schoolName: "",
-    degree: "",
-    start: "",
-    end: "",
-  });
+  const [educationInfo, setEducationInfo] = useState([]);
+
+  // const [educationInfo, setEducationInfo] = useState({
+  //   schoolName: "",
+  //   degree: "",
+  //   start: "",
+  //   end: "",
+  // });
 
   const [experienceInfo, setExperienceInfo] = useState({
     company: "",

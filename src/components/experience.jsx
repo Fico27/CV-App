@@ -55,6 +55,7 @@ function Experience({ experienceInfo, setExperienceInfo }) {
             setExperienceInfo({ ...experienceInfo, end: e.target.value });
           }}
         />
+        <button type="submit">Add Experience</button>
       </form>
     </div>
   );
