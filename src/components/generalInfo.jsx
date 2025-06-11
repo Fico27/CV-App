@@ -1,5 +1,3 @@
-// import { useState } from "react";
-
 function GeneralInfo({ generalInfo, setGeneralInfo }) {
   return (
     <div className="genFormContainer">
