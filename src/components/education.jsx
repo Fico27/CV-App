@@ -8,6 +8,8 @@ function Education({ educationInfo, setEducationInfo }) {
     end: "",
   });
 
+  const [editId, setEditId] = useState(null);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -18,8 +20,17 @@ function Education({ educationInfo, setEducationInfo }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newEducation = { ...formData, id: Date.now() };
-    setEducationInfo((prev) => [...prev, newEducation]);
+
+    if (editId !== null) {
+      const updatedEntry = { ...formData, id: editId };
+      setEducationInfo((prev) =>
+        prev.map((entry) => (entry.id === editId ? updatedEntry : entry))
+      );
+      setEditId(null);
+    } else {
+      const newEducation = { ...formData, id: Date.now() };
+      setEducationInfo((prev) => [...prev, newEducation]);
+    }
 
     setFormData({
       schoolName: "",
@@ -27,24 +38,35 @@ function Education({ educationInfo, setEducationInfo }) {
       start: "",
       end: "",
     });
-    console.log("Form reset, schoolName:", formData.schoolName);
+  };
+
+  const handleDelete = (id) => {
+    setEducationInfo(educationInfo.filter((entry) => entry.id !== id));
+  };
+
+  const handleEdit = (entry) => {
+    setFormData({
+      schoolName: entry.schoolName,
+      degree: entry.degree,
+      start: entry.start,
+      end: entry.end,
+    });
+    setEditId(entry.id);
   };
 
   return (
     <div className="educationContainer">
-      <form onSubmit={handleSubmit}>
-        <h2>Education</h2>
-
-        {educationInfo.map((entry) => (
+      <h2>Education</h2>
+      {educationInfo.map((entry) => (
+        <div>
+          {entry.schoolName}
           <div>
-            {entry.schoolName}
-            <div>
-              <button>Edit</button>
-              <button>Delete</button>
-            </div>
+            <button onClick={() => handleEdit(entry)}>Edit</button>
+            <button onClick={() => handleDelete(entry.id)}>Delete</button>
           </div>
-        ))}
-
+        </div>
+      ))}
+      <form onSubmit={handleSubmit}>
         <label htmlFor="schoolName">School: </label>
         <input
           type="text"
