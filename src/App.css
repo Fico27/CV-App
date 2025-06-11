@@ -182,6 +182,7 @@ form {
   border-radius: 0.2rem;
 }
 
-input {
+input,
+textarea {
   background-color: white;
 }
