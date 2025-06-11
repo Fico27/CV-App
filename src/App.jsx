@@ -15,13 +15,6 @@ function App() {
 
   const [educationInfo, setEducationInfo] = useState([]);
 
-  // const [educationInfo, setEducationInfo] = useState({
-  //   schoolName: "",
-  //   degree: "",
-  //   start: "",
-  //   end: "",
-  // });
-
   const [experienceInfo, setExperienceInfo] = useState([]);
   return (
     <div className="mainHolder">
