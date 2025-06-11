@@ -58,11 +58,18 @@ function Education({ educationInfo, setEducationInfo }) {
     <div className="educationContainer">
       <h2>Education</h2>
       {educationInfo.map((entry) => (
-        <div>
-          {entry.schoolName}
+        <div className="entryContainer">
+          <b>{entry.schoolName}</b>
           <div>
-            <button onClick={() => handleEdit(entry)}>Edit</button>
-            <button onClick={() => handleDelete(entry.id)}>Delete</button>
+            <button className="entryButton" onClick={() => handleEdit(entry)}>
+              Edit
+            </button>
+            <button
+              className="entryButton"
+              onClick={() => handleDelete(entry.id)}
+            >
+              Delete
+            </button>
           </div>
         </div>
       ))}
@@ -106,7 +113,9 @@ function Education({ educationInfo, setEducationInfo }) {
           onChange={handleChange}
           required
         />
-        <button type="submit">Add Education</button>
+        <button type="submit" className="add">
+          Add Education
+        </button>
       </form>
     </div>
   );

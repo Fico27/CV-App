@@ -1,7 +1,7 @@
 #root {
   max-width: 100%;
   margin: 0;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
   height: 100%;
   max-width: 100vw;
@@ -14,6 +14,7 @@
 .formHolder {
   display: flex;
   flex-direction: column;
+  width: 50%;
 }
 
 form {
@@ -22,7 +23,9 @@ form {
 }
 
 label {
+  font-weight: bold;
   text-align: left;
+  margin-top: 0.5rem;
 }
 
 .documentHolder {
@@ -37,9 +40,9 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: bisque;
+  background-color: #cba135;
   width: 100%;
-  height: 25%;
+  height: 20%;
 }
 
 .nameHolder {
@@ -70,12 +73,16 @@ section {
   justify-content: center;
   align-items: center;
   width: 80%;
-  background-color: lightgray;
+  background-color: #cba135;
 }
 
 .titleHolder h3 {
   margin: 0;
   padding: 0.5rem;
+}
+
+.educationContainer {
+  width: 100%;
 }
 
 .educationInfoHolder {
@@ -126,6 +133,53 @@ section {
 
 .experienceInfoDes {
   display: flex;
+}
+
+.add {
+  margin: 1rem auto;
+  width: 40%;
+  border-radius: 1rem;
+  padding: 0.3rem;
+  font-weight: bold;
+  color: #f7fff7;
+  background-color: #5c6b73;
+  font-size: 1rem;
+}
+
+.add:hover {
+  color: #5c6b73;
+  background-color: #f7fff7;
+  transition: background-color 0.5s ease;
+}
+
+form {
+  padding: 2rem 1rem;
+  width: 100%;
+  border: 1px solid;
+  box-shadow: 5px 10px 10px grey;
+  background-color: #f7fff7;
+}
+
+.entryContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid black;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  background-color: #cba135;
+}
+
+.entryContainer:hover {
+  background-color: #519872;
+  transition: background-color 0.5s ease;
+}
+.documentHolder {
+  background-color: #f7fff7;
+}
+.entryButton {
+  margin-left: 0.5rem;
+  border-radius: 0.2rem;
 }
 /* .logo {
   height: 6em;

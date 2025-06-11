@@ -61,11 +61,18 @@ function Experience({ experienceInfo, setExperienceInfo }) {
     <div className="experienceContainer">
       <h2>Experience</h2>
       {experienceInfo.map((entry) => (
-        <div>
-          {entry.company}
+        <div className="entryContainer">
+          <b>{entry.company}</b>
           <div>
-            <button onClick={() => handleEdit(entry)}>Edit</button>
-            <button onClick={() => handleDelete(entry.id)}>Delete</button>
+            <button className="entryButton" onClick={() => handleEdit(entry)}>
+              Edit
+            </button>
+            <button
+              className="entryButton"
+              onClick={() => handleDelete(entry.id)}
+            >
+              Delete
+            </button>
           </div>
         </div>
       ))}
@@ -118,7 +125,9 @@ function Experience({ experienceInfo, setExperienceInfo }) {
           onChange={handleChange}
           required
         />
-        <button type="submit">Add Experience</button>
+        <button type="submit" className="add">
+          Add Experience
+        </button>
       </form>
     </div>
   );
