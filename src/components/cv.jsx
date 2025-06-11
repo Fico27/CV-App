@@ -10,23 +10,6 @@ function Cv({ generalInfo, educationInfo, experienceInfo }) {
         </div>
       </header>
 
-      {/* <section className="educationHolder sectionHolder">
-        <div className="titleHolder">
-          <h3>Education</h3>
-        </div>
-        <div className="educationInfoHolder">
-          <div className="dateHolder">
-            <p>
-              {educationInfo.start} - {educationInfo.end}
-            </p>
-          </div>
-          <div className="schoolHolder">
-            <b>{educationInfo.schoolName}</b>
-            <p>{educationInfo.degree}</p>
-          </div>
-        </div>
-      </section> */}
-
       <section className="educationHolder sectionHolder">
         <div className="titleHolder">
           <h3>Education</h3>
@@ -52,7 +35,25 @@ function Cv({ generalInfo, educationInfo, experienceInfo }) {
         <div className="titleHolder">
           <h3>Experience</h3>
         </div>
-        <div className="experienceInfoHolder ">
+
+        {experienceInfo.map((entry) => (
+          <div className="experienceInfoHolder" key={entry.id}>
+            <div className="experienceInfo">
+              <div className="company">
+                <b>{entry.company}</b>
+                <p>{entry.role}</p>
+              </div>
+              <b>
+                {entry.start} - {entry.end}
+              </b>
+            </div>
+            <div className="experienceInfoDes">
+              <p>{entry.description}</p>
+            </div>
+          </div>
+        ))}
+
+        {/* <div className="experienceInfoHolder ">
           <div className="experienceInfo">
             <div className="company">
               <b>{experienceInfo.company}</b>
@@ -65,7 +66,7 @@ function Cv({ generalInfo, educationInfo, experienceInfo }) {
           <div className="experienceInfoDes">
             <p>{experienceInfo.description}</p>
           </div>
-        </div>
+        </div> */}
       </section>
     </div>
   );

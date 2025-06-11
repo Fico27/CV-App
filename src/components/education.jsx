@@ -74,6 +74,7 @@ function Education({ educationInfo, setEducationInfo }) {
           id="schoolName"
           value={formData.schoolName}
           onChange={handleChange}
+          required
         />
 
         <label htmlFor="degree">Degree: </label>
@@ -83,6 +84,7 @@ function Education({ educationInfo, setEducationInfo }) {
           name="degree"
           value={formData.degree}
           onChange={handleChange}
+          required
         />
 
         <label htmlFor="schoolStartDate">Start: </label>
@@ -92,6 +94,7 @@ function Education({ educationInfo, setEducationInfo }) {
           name="start"
           value={formData.start}
           onChange={handleChange}
+          required
         />
 
         <label htmlFor="schoolEndDate">End: </label>
@@ -101,6 +104,7 @@ function Education({ educationInfo, setEducationInfo }) {
           name="end"
           value={formData.end}
           onChange={handleChange}
+          required
         />
         <button type="submit">Add Education</button>
       </form>

@@ -22,13 +22,7 @@ function App() {
   //   end: "",
   // });
 
-  const [experienceInfo, setExperienceInfo] = useState({
-    company: "",
-    role: "",
-    description: "",
-    start: "",
-    end: "",
-  });
+  const [experienceInfo, setExperienceInfo] = useState([]);
   return (
     <div className="mainHolder">
       <div className="formHolder">
