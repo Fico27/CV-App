@@ -10,13 +10,16 @@ function Education({ educationInfo, setEducationInfo }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newEducation = { ...formData, id: Date.now() };
-    setEducationInfo([...educationInfo, newEducation]);
+    setEducationInfo((prev) => [...prev, newEducation]);
 
     setFormData({
       schoolName: "",
@@ -32,16 +35,23 @@ function Education({ educationInfo, setEducationInfo }) {
       <form onSubmit={handleSubmit}>
         <h2>Education</h2>
 
+        {educationInfo.map((entry) => (
+          <div>
+            {entry.schoolName}
+            <div>
+              <button>Edit</button>
+              <button>Delete</button>
+            </div>
+          </div>
+        ))}
+
         <label htmlFor="schoolName">School: </label>
         <input
           type="text"
           name="schoolName"
           id="schoolName"
-          key={formData.schoolName}
           value={formData.schoolName}
-          onChange={(e) => {
-            e.target.value;
-          }}
+          onChange={handleChange}
         />
 
         <label htmlFor="degree">Degree: </label>
@@ -49,29 +59,26 @@ function Education({ educationInfo, setEducationInfo }) {
           type="text"
           id="degree"
           name="degree"
-          onChange={(e) => {
-            setEducationInfo({ ...educationInfo, degree: e.target.value });
-          }}
+          value={formData.degree}
+          onChange={handleChange}
         />
 
         <label htmlFor="schoolStartDate">Start: </label>
         <input
           type="text"
           id="schoolStartDate"
-          name="schoolStartDate"
-          onChange={(e) => {
-            setEducationInfo({ ...educationInfo, start: e.target.value });
-          }}
+          name="start"
+          value={formData.start}
+          onChange={handleChange}
         />
 
-        <label htmlFor="schoolEndDate">Start: </label>
+        <label htmlFor="schoolEndDate">End: </label>
         <input
           type="text"
           id="schoolEndDate"
-          name="schoolEndDate"
-          onChange={(e) => {
-            setEducationInfo({ ...educationInfo, end: e.target.value });
-          }}
+          name="end"
+          value={formData.end}
+          onChange={handleChange}
         />
         <button type="submit">Add Education</button>
       </form>

@@ -10,7 +10,7 @@ function Cv({ generalInfo, educationInfo, experienceInfo }) {
         </div>
       </header>
 
-      <section className="educationHolder sectionHolder">
+      {/* <section className="educationHolder sectionHolder">
         <div className="titleHolder">
           <h3>Education</h3>
         </div>
@@ -25,7 +25,29 @@ function Cv({ generalInfo, educationInfo, experienceInfo }) {
             <p>{educationInfo.degree}</p>
           </div>
         </div>
+      </section> */}
+
+      <section className="educationHolder sectionHolder">
+        <div className="titleHolder">
+          <h3>Education</h3>
+        </div>
+        {educationInfo.map((entry) => (
+          <div className="educationInfoHolder" key={entry.id}>
+            <div className="dateHolder">
+              <p>
+                {entry.start} - {entry.end}
+              </p>
+            </div>
+            <div className="schoolHolder">
+              <b>{entry.schoolName}</b>
+              <p>{entry.degree}</p>
+            </div>
+          </div>
+        ))}
       </section>
+
+      {/* Spacer */}
+
       <section className="experienceHolder sectionHolder">
         <div className="titleHolder">
           <h3>Experience</h3>
